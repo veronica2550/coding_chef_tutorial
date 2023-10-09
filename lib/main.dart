@@ -32,6 +32,9 @@ class Grade extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            CircleAvatar(
+              backgroundImage: AssetImage('assets/kuromi.gif'),
+            ),
             Text(
               'NAME',
               style: TextStyle(
