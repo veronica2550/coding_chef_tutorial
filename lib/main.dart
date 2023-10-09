@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'KUROMI',
       home: Grade(),
     );
@@ -32,8 +33,17 @@ class Grade extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CircleAvatar(
-              backgroundImage: AssetImage('assets/kuromi.gif'),
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/kuromi.gif'),
+                radius: 60.0,
+              ),
+            ),
+            Divider(
+              height: 60.0,
+              color: Colors.grey,
+              thickness: 0.5,
+              endIndent: 30.0,
             ),
             Text(
               'NAME',
@@ -123,6 +133,13 @@ class Grade extends StatelessWidget {
                   ),
                 )
               ],
+            ),
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/kuromi.png'),
+                radius: 40.0,
+                backgroundColor: Colors.transparent,
+              ),
             )
           ],
         ),
