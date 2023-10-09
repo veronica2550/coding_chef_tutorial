@@ -27,12 +27,6 @@ class MyPage extends StatelessWidget {
         title: const Text('Appbar icon menu'),
         centerTitle: true,
         elevation: 0.0,
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: () {
-            print('menu button is clicked');
-          },
-        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.shopping_cart),
@@ -47,6 +41,29 @@ class MyPage extends StatelessWidget {
             },
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage('assets/kuromi.gif'),
+              ),
+              accountName: Text('Kuromi'),
+              accountEmail: Text('minkyoung2550@gmail.com'),
+              onDetailsPressed: () {
+                print('arrow is clicked');
+              },
+              decoration: BoxDecoration(
+                  color: Colors.pink[300],
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(40.0),
+                    bottomRight: Radius.circular(40.0),
+                  )),
+            )
+          ],
+        ),
       ),
     );
   }
