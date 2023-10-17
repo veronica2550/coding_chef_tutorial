@@ -50,6 +50,16 @@ class MyPage extends StatelessWidget {
               currentAccountPicture: CircleAvatar(
                 backgroundImage: AssetImage('assets/kuromi.gif'),
               ),
+              otherAccountsPictures: [
+                CircleAvatar(
+                  backgroundImage: AssetImage('assets/kuromi.png'),
+                  backgroundColor: Colors.transparent,
+                ),
+                // CircleAvatar(
+                //   backgroundImage: AssetImage('assets/kuromi.png'),
+                //   backgroundColor: Colors.transparent,
+                // ),
+              ],
               accountName: Text('Kuromi'),
               accountEmail: Text('minkyoung2550@gmail.com'),
               onDetailsPressed: () {
@@ -61,7 +71,40 @@ class MyPage extends StatelessWidget {
                     bottomLeft: Radius.circular(40.0),
                     bottomRight: Radius.circular(40.0),
                   )),
-            )
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.home,
+                color: Colors.grey[850],
+              ),
+              title: Text("HOME"),
+              onTap: () {
+                print('Home is clicked');
+              },
+              trailing: Icon(Icons.add),
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.settings,
+                color: Colors.grey[850],
+              ),
+              title: Text("Setting"),
+              onTap: () {
+                print('Setting is clicked');
+              },
+              trailing: Icon(Icons.add),
+            ),
+            ListTile(
+              leading: Icon(
+                Icons.question_answer,
+                color: Colors.grey[850],
+              ),
+              title: Text("QnA"),
+              onTap: () {
+                print('QnA is clicked');
+              },
+              trailing: Icon(Icons.add),
+            ),
           ],
         ),
       ),
