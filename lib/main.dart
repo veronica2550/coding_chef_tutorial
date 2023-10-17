@@ -28,19 +28,22 @@ class MyPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: Center(
-        child: TextButton(
-          child: Text(
-            'show me',
-            style: TextStyle(color: Colors.white),
-          ),
-          style: ButtonStyle(
-              backgroundColor: MaterialStatePropertyAll(Colors.red)),
-          onPressed: () {
-            ScaffoldMessenger.of(context)
-                .showSnackBar(SnackBar(content: Text('hello')));
-          },
-        ),
-      ),
+          child: ElevatedButton(
+        child: Text('show me'),
+        onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                'hello',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white),
+              ),
+              backgroundColor: Colors.teal,
+              duration: Duration(milliseconds: 1000),
+            ),
+          );
+        },
+      )),
     );
   }
 }
