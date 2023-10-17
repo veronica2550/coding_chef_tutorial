@@ -51,3 +51,6 @@ void flutterToast() {
       textColor: Colors.white,
       toastLength: Toast.LENGTH_SHORT);
 }
+
+//Toast message가 실행이 안되는 경우
+//코드에 이상이 없는데 Toast 메세지가 구현이 안될 때에는 터미널 창을 띄우고 "flutter clean"과 "flutter run" 명령을 실행해 보시기 바랍니다.
