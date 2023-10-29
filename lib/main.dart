@@ -1,56 +1,49 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Toast Message',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyPage(),
+      title: 'Myapp',
+      theme: ThemeData(primaryColor: Colors.blue),
+      home: FirstPage(),
     );
   }
 }
 
-class MyPage extends StatelessWidget {
-  const MyPage({Key? key}) : super(key: key);
-
+class FirstPage extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context2) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Toast Message'),
-        centerTitle: true,
+        title: Text('FirstPage'),
       ),
       body: Center(
-        child: TextButton(
-          onPressed: () {
-            flutterToast();
-          },
-          style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.yellow)),
-          child: const Text('Toast'),
-        ),
-      ),
+          child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(context2,
+                    MaterialPageRoute(builder: ((context) => SecondPage())));
+              },
+              child: Text('Go to the Second Page'))),
     );
   }
 }
 
-void flutterToast() {
-  Fluttertoast.showToast(
-      msg: 'Flutter',
-      gravity: ToastGravity.BOTTOM,
-      backgroundColor: Colors.redAccent,
-      fontSize: 20,
-      textColor: Colors.white,
-      toastLength: Toast.LENGTH_SHORT);
+class SecondPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext ctx) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('SecondPage'),
+      ),
+      body: Center(
+          child: ElevatedButton(
+              onPressed: () {
+                Navigator.pop(ctx);
+              },
+              child: Text('Go to the First Page'))),
+    );
+  }
 }
-
-//Toast message가 실행이 안되는 경우
-//코드에 이상이 없는데 Toast 메세지가 구현이 안될 때에는 터미널 창을 띄우고 "flutter clean"과 "flutter run" 명령을 실행해 보시기 바랍니다.
